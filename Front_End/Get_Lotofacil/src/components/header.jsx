@@ -36,9 +36,7 @@ const header = () => {
                         <span>14</span>
                         <span>15</span>
                     </div>
-                    <div className="data">
-                        
-                        
+                    <div className="data">  
                     </div>
                 </div>
             </div>
