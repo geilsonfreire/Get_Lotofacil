@@ -1,0 +1,64 @@
+header {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    gap:  5rem;
+    width: 100%;
+    border: solid 1px #e0e0e0;
+}
+
+header img {
+    width: 250px;
+    height: 50px;
+}
+
+header .ultimo-sorteio {
+    gap: 1rem;
+    border-left: solid 1px #00ff26;
+    padding-left: 1rem;
+    border-radius: 4px;
+}
+
+header .ultimo-sorteio h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header .ultimo-sorteio h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #00ff26;
+}
+
+header .ultimo-sorteio h3 span {
+    font-size: .8rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+header .ultimo-sorteio .sorteio {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #850268;
+}
+
+header .ultimo-sorteio .sorteio .dezenas {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+header .ultimo-sorteio .sorteio .dezenas span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #850268;
+    border: solid 1px #850268;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

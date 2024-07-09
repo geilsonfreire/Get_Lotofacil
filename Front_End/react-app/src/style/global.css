@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Arapey:ital@0;1&display=swap');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+    font: inherit;
+}
+
+/* Body */
+body {
+    font-family: 'Anta', sans-serif;
+    background: #000;
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Links */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Ul -  OL*/
+ul,
+ol {
+    list-style: none;
+}
+
+
+/* Grid */
+.app-conatiner-geral {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    height: 100vh;
+}
+
+.app-container-home {
+    width: calc(100% - 100px);
+    height: 100%;
+    overflow-y: auto;
+    padding: 20px;
+}
