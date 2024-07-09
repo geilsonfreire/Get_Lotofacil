@@ -5,12 +5,12 @@ import React from 'react'
 import "../style/home.css";
 
 // Import Components
-import Header from "../components/header";
+import Header from "../components/header.jsx";
 
-const home = () => {
+const Home = () => {
     return (
         <Header />
     )
 }
 
-export default home
+export default Home

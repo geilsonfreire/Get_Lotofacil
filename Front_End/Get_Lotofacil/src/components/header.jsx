@@ -9,7 +9,7 @@ import Banner from "../assets/img/BannerLotofacil.png";
 // Import CSS
 import "../style/header.css";
 
-const header = () => {
+const Header = () => {
     return (
         <header>
             <div className="banner">
@@ -44,4 +44,4 @@ const header = () => {
     )
 }
 
-export default header
+export default Header

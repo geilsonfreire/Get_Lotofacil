@@ -1,6 +1,6 @@
 // Import Bibliotecas
 import React, { useEffect } from "react";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 // Import icon, img assets
 import Logo from "../assets/img/lotofacil.png";
@@ -20,7 +20,7 @@ import {
     FaSignOutAlt,
 } from "react-icons/fa";
 
-const menu = () => {
+const Menu = () => {
 
     useEffect(() => {
         const mainMenuLi = document.getElementById("mainMenu").querySelectorAll("li");
@@ -63,4 +63,4 @@ const Icon = ({ to, icon, title, onClick }) => ( // Icon component
     </li>
 );
 
-export default menu
+export default Menu
