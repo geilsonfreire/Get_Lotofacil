@@ -6,11 +6,15 @@ import "../style/home.css";
 
 // Import Components
 import Header from "../components/header.jsx";
+import AllResultLotofacil from '../components/AllResultLotofacil.jsx';
 
 const Home = () => {
     return (
-        <Header />
+        <div>
+            <Header />
+            <AllResultLotofacil />
+        </div>
     )
-}
+};
 
 export default Home

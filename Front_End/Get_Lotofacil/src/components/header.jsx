@@ -1,47 +1,50 @@
 // Import Bibliotecas
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 
+// Import Services
+import apiService from "../services/APIServices";
 
-// Import icon img assets
+// Import Images
 import Banner from "../assets/img/BannerLotofacil.png";
-
 
 // Import CSS
 import "../style/header.css";
 
 const Header = () => {
+    const [concurso, setConcurso] = useState({}); // Inicializa o estado do concurso
+
+    useEffect(() => {
+        apiService.getLatest()
+            .then(response => {
+                console.log(response.data); // Check the console output
+                setConcurso(response.data);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }, []);
+
     return (
         <header>
             <div className="banner">
-                <img src={Banner} alt="" />
+                <img src={Banner} alt="Banner Lotofácil" />
             </div>
+
             <div className="ultimo-sorteio">
                 <h2>Último Sorteio</h2>
-                <h3>Concurso: <span>3142</span> - <span> 01/01/2021</span></h3>
+                <h3>
+                    Concurso: <span>{concurso && concurso.concurso}</span> - <span>{concurso && concurso.data}</span>
+                </h3>
                 <div className="sorteio">
                     <div className="dezenas">
-                        <span>01</span>
-                        <span>02</span>
-                        <span>03</span>
-                        <span>04</span>
-                        <span>05</span>
-                        <span>06</span>
-                        <span>07</span>
-                        <span>08</span>
-                        <span>09</span>
-                        <span>10</span>
-                        <span>11</span>
-                        <span>12</span>
-                        <span>13</span>
-                        <span>14</span>
-                        <span>15</span>
-                    </div>
-                    <div className="data">  
+                        {concurso && concurso.dezenas && concurso.dezenas.map((dezena, index) => (
+                            <span key={index}>{dezena}</span>
+                        ))}
                     </div>
                 </div>
             </div>
         </header>
-    )
-}
+    );
+};
 
-export default Header
+export default Header;

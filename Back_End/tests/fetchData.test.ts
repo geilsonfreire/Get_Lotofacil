@@ -3,7 +3,7 @@ import request from 'supertest';
 import express from 'express';
 import bodyParser from 'body-parser';
 import sequelize from '../src/config/db';
-import LotofacilRoutes from '../src/routes/lotofacilRoute';
+import Routes from '../src/routes/route';
 import { describe, beforeAll, it, expect, afterAll } from '@jest/globals';
 
 
@@ -11,7 +11,7 @@ import { describe, beforeAll, it, expect, afterAll } from '@jest/globals';
 const app = express();
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/api', LotofacilRoutes);
+app.use('/api', Routes);
 
 describe('Testando a atualização dos dados da Lotofacil', () => {
   beforeAll(async () => {
