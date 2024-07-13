@@ -1,0 +1,34 @@
+.all-results {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.all-results h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.all-results table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.all-results th,
+.all-results td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.all-results th {
+    background-color: #f2f2f2;
+}
+
+.all-results tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.all-results tr:hover {
+    background-color: #f1f1f1;
+}
