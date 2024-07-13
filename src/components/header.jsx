@@ -1,7 +1,7 @@
 // Import Bibliotecas
 import React, { useState, useEffect } from "react";
 
-// Import Services
+// Import Services API
 import apiService from "../services/APIServices";
 
 // Import Images
@@ -14,15 +14,15 @@ const Header = () => {
     const [concurso, setConcurso] = useState({}); // Inicializa o estado do concurso
 
     useEffect(() => {
-        apiService.getLatest()
+        apiService.getLatest() // Chama a API para pegar o último concurso
             .then(response => {
-                console.log(response.data); // Check the console output
-                setConcurso(response.data);
+                console.log(response.data); // Exibe no console o retorno da API
+                setConcurso(response.data); // Atualiza o estado do concurso
             })
             .catch(error => {
                 console.error(error);
             });
-    }, []);
+    }, []); // Executa apenas uma vez
 
     return (
         <header>

@@ -14,9 +14,9 @@ const EndPoints = {
 
 // Define os serviços de API
 const APIService = {
-    getLotofacil: () => API_BASE.get(EndPoints.lotofacil),
-    getConcurso: (concursoNumber) => API_BASE.get(`${EndPoints.concurso}/${concursoNumber}`),
-    getLatest: () => API_BASE.get(EndPoints.latest),
+    getLotofacil: () => API_BASE.get(EndPoints.lotofacil), // Obtém todos os resultados da Lotofacil
+    getConcurso: (concursoNumber) => API_BASE.get(`${EndPoints.concurso}/${concursoNumber}`), // Obtém um resultado por concurso da Lotofacil
+    getLatest: () => API_BASE.get(EndPoints.latest), // Obtém o último resultado da Lotofacil
 };
 
 export default APIService;
