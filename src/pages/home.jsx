@@ -12,7 +12,7 @@ const Home = () => {
     return (
         <div>
             <Header />
-            <AllResultLotofacil />
+            {/* <AllResultLotofacil /> */}
         </div>
     )
 };

@@ -8,32 +8,32 @@ import APIService from '../services/APIServices';
 import '../style/AllResults.css';
 
 const AllResultLotofacil = () => {
-    const [results, setResults] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [results, setResults] = useState([]); // Inicializa o estado dos resultados
+    const [loading, setLoading] = useState(true);  // Inicializa o estado de carregamento
+    const [error, setError] = useState(null); // Inicializa o estado de erro
 
     useEffect(() => {
         const fetchResults = async () => {
             try {
-                const response = await APIService.getLotofacil();
-                setResults(response.data);
-                setLoading(false);
+                const response = await APIService.getLotofacil(); // Chama a API para pegar os resultados da Lotofácil
+                setResults(response.data); // Atualiza o estado dos resultados
+                setLoading(false); // Atualiza o estado de carregamento
             } catch (err) {
-                setError(err);
-                setLoading(false);
+                setError(err); // Atualiza o estado de erro
+                setLoading(false); // Atualiza o estado de carregamento mesmo em caso de erro
             }
         };
 
-        fetchResults();
+        fetchResults(); // Chama a função para buscar os resultados
     }, []);
 
     if (loading) {
         return <div>Carregando...</div>;
-    }
+    } // Exibe mensagem de carregamento enquanto os dados estão sendo buscados
 
     if (error) {
         return <div>Erro ao carregar os resultados: {error.message}</div>;
-    }
+    } // Exibe mensagem de erro em caso de falha na busca dos resultados
 
     return (
         <div>
