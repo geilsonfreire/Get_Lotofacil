@@ -157,6 +157,61 @@ header .ultimo-sorteio .sorteio .dezenas span {
 
 }
 
+header .premio-container {
+    width: 100%;
+    gap: 1rem;
+    margin: 1rem 0;
+    padding: .5rem;
+    border-radius: 10px;
+    border-left: solid 1px #00ff26;
+}
+
+header .premio-container h2 {
+    font-size: 1rem;
+    text-align: start;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background: #850268;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 5px 2rem;
+}
+
+header .premio-container h2 i {
+    color: #00ff26;
+    font-size: 1.5rem;
+    margin-right: .5rem;
+    display: inline-block;
+    transform: rotate(35deg);
+}
+
+/* Tabelas */
+.premio-container {
+    margin-top: 20px;
+}
+
+.premio-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.premio-container th,
+.premio-container td {
+    border: 1px solid #dddddd1c;
+    padding: 4px;
+    text-align: left;
+}
+
+.premio-container th {
+    color: #00ff26;
+}
+
+.premio-container td {
+    color: #ffffff4d;
+    font-size: .8rem;
+}
+
 /* Estilos para o Toast */
 .custom-toast {
     background: #fff;

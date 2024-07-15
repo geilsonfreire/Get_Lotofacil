@@ -8,6 +8,7 @@ import apiService from "../services/APIServices";
 // Import Images
 import Banner from "../assets/img/BannerLotofacil.png";
 import { BsSearch } from "react-icons/bs";
+import { FiAward } from "react-icons/fi";
 
 
 // Import CSS
@@ -143,6 +144,29 @@ const Header = () => {
                                 <span key={index}>{dezena}</span>
                             ))}
                         </div>
+                    </div>
+                    <div className="premio-container">
+                        <h2><i><FiAward /></i>Premiação</h2>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Acertos</th>
+                                    <th>Ganhadores</th>
+                                    <th>Premio</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {concurso.premiacoes && concurso.premiacoes.map((premio, index) => (
+                                    <tr key={index}>
+                                        <td>{premio.descricao}</td>
+                                        <td>{premio.ganhadores}</td>
+                                        <td>{premio.valorPremio.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+
                     </div>
                 </div>
             </div>
