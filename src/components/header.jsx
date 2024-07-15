@@ -7,7 +7,7 @@ import apiService from "../services/APIServices";
 
 // Import Images
 import Banner from "../assets/img/BannerLotofacil.png";
-import { BsSearch } from "react-icons/bs";
+import { BsSearch, BsBookmarkCheck } from "react-icons/bs";
 import { FiAward } from "react-icons/fi";
 
 
@@ -137,6 +137,14 @@ const Header = () => {
                             </span>
                         </h3>
                         <h3>Local do sorteio: <span>{concurso.local}</span></h3>
+                        <h3>
+                            Acumulado:
+                            <span>
+                                {concurso.valorAcumuladoProximoConcurso &&
+                                    concurso.valorAcumuladoProximoConcurso
+                                        .toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
+                            </span>
+                        </h3>
                     </div>
                     <div className="sorteio">
                         <div className="dezenas">
@@ -164,6 +172,44 @@ const Header = () => {
                                         <td>{premio.valorPremio.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
                                     </tr>
                                 ))}
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                    <div className="premio-container">
+                        <h2><i><BsBookmarkCheck /></i>Status do proximo concurso</h2>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Prox Concurso</th>
+                                    <th>Data prox. concurso</th>
+                                    <th>Valor Acumulado</th>
+                                    <th>Valor do concurso</th>
+                                    <th>Estipulado prox. concurso</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{concurso.proximoConcurso}</td>
+                                    <td>{concurso.dataProximoConcurso}</td>
+                                    <td>
+                                        {concurso.valorAcumuladoProximoConcurso &&
+                                            concurso.valorAcumuladoProximoConcurso
+                                                .toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
+                                    </td>
+                                    <td>
+                                        {concurso.valorAcumuladoConcurso_0_5 &&
+                                            concurso.valorAcumuladoConcurso_0_5
+                                                .toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
+                                    </td>
+                                    <td>
+                                        {concurso.valorEstimadoProximoConcurso &&
+                                            concurso.valorEstimadoProximoConcurso
+                                                .toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
 
