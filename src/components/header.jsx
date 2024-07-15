@@ -97,7 +97,7 @@ const Header = () => {
 
 
     return (
-        <header>
+        <main>
             <ToastContainer />
 
             <div className="ultimo-sorteio">
@@ -170,7 +170,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-        </header>
+        </main>
     );
 };
 
