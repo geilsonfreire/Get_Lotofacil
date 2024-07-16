@@ -1,12 +1,27 @@
 .all-results {
     width: 100%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 5px;
 }
 
 .all-results h1 {
-    text-align: center;
-    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background: #850268;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: .5rem;
+}
+
+.all-results h1 i {  
+    display: inline-block;
+    font-size: 3rem;
+    margin: 0 1rem;
+    color: #00ff26;
 }
 
 .all-results table {
@@ -16,19 +31,25 @@
 
 .all-results th,
 .all-results td {
-    border: 1px solid #ddd;
-    padding: 8px;
+    padding: 5px;
     text-align: left;
+    font-weight: normal;
+    color: #ffffff56;
 }
 
 .all-results th {
-    background-color: #f2f2f2;
+    background-color: #00ff26;
+    color: #000;
+}
+
+.all-results td {
+    font-size: .7rem;
 }
 
 .all-results tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: transparent;
 }
 
 .all-results tr:hover {
-    background-color: #f1f1f1;
+    background-color: #850268;
 }

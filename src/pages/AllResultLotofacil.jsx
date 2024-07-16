@@ -1,8 +1,12 @@
 // Import Bibliotecas
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 // Import Services API
 import APIService from '../services/APIServices';
+
+//  icons
+import { BsCardList } from "react-icons/bs";
 
 // Import CSS
 import '../style/AllResults.css';
@@ -13,31 +17,44 @@ const AllResultLotofacil = () => {
     const [error, setError] = useState(null); // Inicializa o estado de erro
 
     useEffect(() => {
+        let toastId = null; // Variável para armazenar o ID do toast
+
         const fetchResults = async () => {
             try {
                 const response = await APIService.getLotofacil(); // Chama a API para pegar os resultados da Lotofácil
                 setResults(response.data); // Atualiza o estado dos resultados
                 setLoading(false); // Atualiza o estado de carregamento
+
+                // Exibe o toast apenas se ainda não estiver sendo exibido
+                if (!toastId) {
+                    toastId = toast.info("Dados atualizados.", {
+                        autoClose: 3000, // Fechar automaticamente após 3 segundos
+                        onClose: () => setLoading(false), // Quando fechar, atualiza o estado de carregamento
+                    });
+                } else {
+                    setLoading(false); // Finaliza o estado de carregamento
+                }
+
             } catch (err) {
-                setError(err); // Atualiza o estado de erro
-                setLoading(false); // Atualiza o estado de carregamento mesmo em caso de erro
+                console.error("Erro ao carregar dados do concurso:", error);
+                toast.error("Erro ao carregar dados do concurso.");
+                setLoading(false); // Finaliza o estado de carregamento em caso de erro
             }
         };
 
         fetchResults(); // Chama a função para buscar os resultados
+
+        return () => {
+            if (toastId) {
+                toast.dismiss(toastId); // Fecha o toast se o componente for desmontado antes do tempo definido
+            }
+        };
     }, []);
 
-    if (loading) {
-        return <div>Carregando...</div>;
-    } // Exibe mensagem de carregamento enquanto os dados estão sendo buscados
-
-    if (error) {
-        return <div>Erro ao carregar os resultados: {error.message}</div>;
-    } // Exibe mensagem de erro em caso de falha na busca dos resultados
-
+    // Rederizando jsx
     return (
-        <div>
-            <h1>Resultados da Lotofácil</h1>
+        <div className="all-results">
+            <h1><i><BsCardList /></i> Resultados da Lotofácil</h1>
             <table>
                 <thead>
                     <tr>

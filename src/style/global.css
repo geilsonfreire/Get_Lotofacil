@@ -45,3 +45,31 @@ ol {
     overflow-y: auto;
     padding: 20px;
 }
+
+/* scrollbar.css */
+
+/* Estilo da barra de rolagem */
+::-webkit-scrollbar {
+    width: 8px;
+    /* Largura da barra de rolagem */
+}
+
+/* Estilo do track (fundo da barra de rolagem) */
+::-webkit-scrollbar-track {
+    background: #000;
+    /* Cor de fundo */
+}
+
+/* Estilo do thumb (a parte deslizante da barra de rolagem) */
+::-webkit-scrollbar-thumb {
+    background: #00ff26;
+    /* Cor do thumb */
+    border-radius: 4px;
+    /* Borda arredondada */
+}
+
+/* Estilo do thumb ao passar o mouse */
+::-webkit-scrollbar-thumb:hover {
+    background: #00ff26;
+    /* Cor do thumb ao passar o mouse */
+}
