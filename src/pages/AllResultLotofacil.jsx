@@ -61,8 +61,6 @@ const AllResultLotofacil = () => {
                         <th>Concurso</th>
                         <th>Data</th>
                         <th>Dezenas</th>
-                        <th>Acumulou</th>
-                        <th>Local do Sorteio</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -71,8 +69,6 @@ const AllResultLotofacil = () => {
                             <td>{result.concurso}</td>
                             <td>{result.data}</td>
                             <td>{result.dezenas ? result.dezenas.join(', ') : 'N/A'}</td>
-                            <td>{result.acumulou ? 'Sim' : 'Não'}</td>
-                            <td>{result.local}</td>
                         </tr>
                     ))}
                 </tbody>

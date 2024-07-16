@@ -157,7 +157,7 @@ main .ultimo-sorteio .sorteio .dezenas span {
 
 }
 
-main .premio-container {
+main .Titulos {
     width: 100%;
     gap: 1rem;
     margin: 1rem 0;
@@ -166,7 +166,7 @@ main .premio-container {
     border-left: solid 1px #00ff26;
 }
 
-main .premio-container h2 {
+main .Titulos h2 {
     font-size: 1rem;
     text-align: start;
     border-top-left-radius: 30px;
@@ -178,7 +178,7 @@ main .premio-container h2 {
     padding: 5px 2rem;
 }
 
-main .premio-container h2 i {
+main .Titulos h2 i {
     color: #00ff26;
     font-size: 1.5rem;
     margin-right: .5rem;
@@ -187,27 +187,27 @@ main .premio-container h2 i {
 }
 
 /* Tabelas */
-.premio-container {
+.Titulos {
     margin-top: 20px;
 }
 
-.premio-container table {
+.Titulos table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.premio-container th,
-.premio-container td {
+.Titulos th,
+.Titulos td {
     border: 1px solid #dddddd1c;
     padding: 4px;
     text-align: left;
 }
 
-.premio-container th {
+.Titulos th {
     color: #00ff26;
 }
 
-.premio-container td {
+.Titulos td {
     color: #ffffff4d;
     font-size: .8rem;
 }

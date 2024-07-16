@@ -29,7 +29,7 @@ const Home = () => {
                 const response = await apiService.getLatest(); // Chama a API para pegar o último concurso
                 console.log(response.data); // Exibe no console o retorno da API
                 setConcurso(response.data); // Atualiza o estado do concurso com os novos dados obtidos
-                
+
                 // Exibe o toast apenas se ainda não estiver sendo exibido
                 if (!toastId) {
                     toastId = toast.info("Dados atualizados.", {
@@ -147,7 +147,7 @@ const Home = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="premio-container">
+                    <div className="Titulos">
                         <h2><i><FiAward /></i>Premiação</h2>
 
                         <table>
@@ -171,7 +171,7 @@ const Home = () => {
 
                     </div>
 
-                    <div className="premio-container">
+                    <div className="Titulos">
                         <h2><i><BsBookmarkCheck /></i>Status do proximo concurso</h2>
                         <table>
                             <thead>
@@ -208,7 +208,53 @@ const Home = () => {
 
                     </div>
                 </div>
+
+                <div className="Titulos">
+                    <h2><i><BsBookmarkCheck /></i>Probabilidade de acertos</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Acertos</th>
+                                <th>Valor da aposta</th>
+                                <th>Probabilidade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>15 números</td>
+                                <td>R$ 3,00</td>
+                                <td>1 em 3.268.760</td>
+                            </tr>
+                            <tr>
+                                <td>16 números</td>
+                                <td>R$ 48,00</td>
+                                <td>1 em 204.297</td>
+                            </tr>
+                            <tr>
+                                <td>17 números</td>
+                                <td>R$ 408,00</td>
+                                <td>1 em 24.035</td>
+                            </tr>
+                            <tr>
+                                <td>18 números</td>
+                                <td>R$ 2.448,00</td>
+                                <td>1 em 4.005</td>
+                            </tr>
+                            <tr>
+                                <td>19 números</td>
+                                <td>R$ 11.628,00</td>
+                                <td>1 em 843</td>
+                            </tr>
+                            <tr>
+                                <td>20 números</td>
+                                <td>R$ 46.512,00</td>
+                                <td>1 em 210</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
+
         </main>
     );
 };
