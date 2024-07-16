@@ -7,17 +7,18 @@
 .all-results h1 {
     display: flex;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    border-left: solid 1px #850268;
+    border-bottom: solid 1px #850268;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    background: #850268;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
-    padding: .5rem;
+    padding: 0 .5rem;
 }
 
-.all-results h1 i {  
+.all-results h1 i {
     display: inline-block;
     font-size: 3rem;
     margin: 0 1rem;
@@ -27,6 +28,7 @@
 .all-results table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 1rem;
 }
 
 .all-results th,
@@ -38,12 +40,17 @@
 }
 
 .all-results th {
-    background-color: #00ff26;
-    color: #000;
+    border-radius: 4px;
+    color: #fff;
+    border-bottom: solid 1px #00ff26;
 }
 
 .all-results td {
     font-size: .7rem;
+}
+
+.all-results td:hover {
+    color: #fff;
 }
 
 .all-results tr:nth-child(even) {
