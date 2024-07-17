@@ -1,0 +1,53 @@
+.analise {
+    padding: 1rem 2rem;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.analise h2 {
+    font-size: 1.5rem;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background: #850268;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: .5rem;
+}
+
+.analise h2 i {
+    padding: 0 1rem;
+    color: #00ff26;
+}
+
+.analise table {
+    margin: 1rem 0;
+    width: 50%;
+    border-collapse: collapse;
+}
+
+.analise table th {
+    border-bottom: 1px solid #00ff26;
+    color: #00ff26;
+}
+
+
+.analise td {
+    font-size: .7rem;
+    padding: 5px;
+    text-align: left;
+    font-weight: normal;
+    color: #ffffff56;
+}
+
+.analise td:hover {
+    color: #fff;
+}
+
+.analise tr:nth-child(even) {
+    background-color: transparent;
+}
+
+.analise td:hover {
+    background-color: #850268;
+}

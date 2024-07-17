@@ -11,7 +11,6 @@ import "../style/menu.css";
 // Import icon
 import {
     FaHome,
-    FaDatabase,
     FaShoppingCart,
     FaWallet,
     FaChartLine,
@@ -42,7 +41,7 @@ const Menu = () => {
           <ul id="mainMenu">
               <Icon to="/" icon={<FaHome />} title="Home" /> 
               <Icon to="/AllResultLotofacil" icon={<FaRegClock />} title="Historico de Resultados" /> 
-              <Icon to="#" icon={<FaChartLine />} title="Analise Statistico" /> 
+              <Icon to="/analise" icon={<FaChartLine />} title="Analise Statistico" /> 
               <Icon to="#" icon={<FaShoppingCart />} title="Produtos" /> 
               <Icon to="#" icon={<FaWallet />} title="Carteira" />
           </ul>
