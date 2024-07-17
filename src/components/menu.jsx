@@ -42,10 +42,9 @@ const Menu = () => {
           <ul id="mainMenu">
               <Icon to="/" icon={<FaHome />} title="Home" /> 
               <Icon to="/AllResultLotofacil" icon={<FaRegClock />} title="Historico de Resultados" /> 
+              <Icon to="#" icon={<FaChartLine />} title="Analise Statistico" /> 
               <Icon to="#" icon={<FaShoppingCart />} title="Produtos" /> 
               <Icon to="#" icon={<FaWallet />} title="Carteira" />
-              <Icon to="#" icon={<FaChartLine />} title="Gráficos" /> 
-              <Icon to="#" icon={<FaRegClock />} title="Histórico" /> 
           </ul>
           <ul className="lasttMenu">
               <Icon to="#" icon={<FaCog />} title="Configurações" /> {/* page Settings */}

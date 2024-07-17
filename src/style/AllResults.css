@@ -25,6 +25,40 @@
     color: #00ff26;
 }
 
+/* Filtros */
+.all-results .filter{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin: 1rem 0;
+    background-color: #850268;
+}
+
+.all-results .filter-button{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.all-results .filter-button button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: none;
+    font-size: .7rem;
+    margin: 0 1rem;
+    color: #fff;
+}
+
+.all-results .filter-button button i {
+    font-size: 1.5rem;
+    margin: auto .5rem;
+    color: #00ff26;
+    cursor: pointer;
+}
+
 .all-results table {
     width: 100%;
     border-collapse: collapse;
