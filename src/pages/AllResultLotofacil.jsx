@@ -1,9 +1,8 @@
 // Import Bibliotecas
-import React, { useEffect, useState } from 'react';
-import { toast } from 'react-toastify';
+import React, { useState } from 'react';
 
-// Import Services API
-import APIService from '../services/APIServices';
+// Import Hooks
+import useFetchLotofacil from '../hooks/useFetchLotofacil';
 
 //  icons
 import { BsCardList, BsFillCaretUpFill, BsFillCaretDownFill } from "react-icons/bs";
@@ -12,46 +11,11 @@ import { BsCardList, BsFillCaretUpFill, BsFillCaretDownFill } from "react-icons/
 import '../style/AllResults.css';
 
 const AllResultLotofacil = () => {
-    const [results, setResults] = useState([]); // Inicializa o estado dos resultados
-    const [loading, setLoading] = useState(true);  // Inicializa o estado de carregamento
-    const [error, setError] = useState(null); // Inicializa o estado de erro
     const [isSorted, setIsSorted] = useState(false); // Novo estado para controle da ordenação
     const [sortDirection, setSortDirection] = useState(''); // Novo estado para direção da ordenação
+    const { results } = useFetchLotofacil(); // Chamando o hook para buscar os resultados
 
-    useEffect(() => {
-        let toastId = null; // Variável para armazenar o ID do toast
-
-        const fetchResults = async () => {
-            try {
-                const response = await APIService.getLotofacil(); // Chama a API para pegar os resultados da Lotofácil
-                setResults(response.data); // Atualiza o estado dos resultados
-                setLoading(false); // Atualiza o estado de carregamento
-
-                // Exibe o toast apenas se ainda não estiver sendo exibido
-                if (!toastId) {
-                    toastId = toast.info("Dados atualizados.", {
-                        autoClose: 3000, // Fechar automaticamente após 3 segundos
-                        onClose: () => setLoading(false), // Quando fechar, atualiza o estado de carregamento
-                    });
-                } else {
-                    setLoading(false); // Finaliza o estado de carregamento
-                }
-
-            } catch (err) {
-                console.error("Erro ao carregar dados do concurso:", error);
-                toast.error("Erro ao carregar dados do concurso.");
-                setLoading(false); // Finaliza o estado de carregamento em caso de erro
-            }
-        };
-
-        fetchResults(); // Chama a função para buscar os resultados
-
-        return () => {
-            if (toastId) {
-                toast.dismiss(toastId); // Fecha o toast se o componente for desmontado antes do tempo definido
-            }
-        };
-    }, []);
+    
 
     // Funções para manipular a ordenação
     const sortResults = (direction) => {
