@@ -39,7 +39,7 @@ const useFetchLotofacil = () => {
                 toast.dismiss(toastId);
             }
         };
-    }, [error]);
+    }, []);
 
     return { results, loading, error };
 };

@@ -1,5 +1,5 @@
 // Import Bibliotecas
-import React, { useEffect, useState } from 'react';
+import React, { } from 'react';
 
 // Import Hooks
 import useFetchLotofacil from '../hooks/useFetchLotofacil';
@@ -13,18 +13,42 @@ import '../style/analise.css';
 const Analise = () => {
     const { results } = useFetchLotofacil(); // Chamando o hook para buscar os resultados da Lotofácil
 
-    // Função para contar a ocorrência do número 1 em todas as dezenas
-    const countOccurrencesOfOne = () => {
+    // Função genérica para contar a ocorrência de um número específico
+    const countOccurrencesOfNumber = (number) => {
         return results.reduce((total, result) => {
             if (result.dezenas) {
-                return total + result.dezenas.filter(dezena => Number(dezena) === 1).length;
+                return total + result.dezenas.filter(dezena => Number(dezena) === number).length;
             }
             return total;
         }, 0);
     };
 
-    // Chama a função para contar as ocorrências do número 1
-    const occurrencesOfOne = countOccurrencesOfOne();
+    // Chama a função para contar as ocorrências de 1 a 25
+    const N1 = countOccurrencesOfNumber(1);
+    const N2 = countOccurrencesOfNumber(2);
+    const N3 = countOccurrencesOfNumber(3);
+    const N4 = countOccurrencesOfNumber(4);
+    const N5 = countOccurrencesOfNumber(5);
+    const N6 = countOccurrencesOfNumber(6);
+    const N7 = countOccurrencesOfNumber(7);
+    const N8 = countOccurrencesOfNumber(8);
+    const N9 = countOccurrencesOfNumber(9);
+    const N10 = countOccurrencesOfNumber(10);
+    const N11 = countOccurrencesOfNumber(11);
+    const N12 = countOccurrencesOfNumber(12);
+    const N13 = countOccurrencesOfNumber(13);
+    const N14 = countOccurrencesOfNumber(14);
+    const N15 = countOccurrencesOfNumber(15);
+    const N16 = countOccurrencesOfNumber(16);
+    const N17 = countOccurrencesOfNumber(17);
+    const N18 = countOccurrencesOfNumber(18);
+    const N19 = countOccurrencesOfNumber(19);
+    const N20 = countOccurrencesOfNumber(20);
+    const N21 = countOccurrencesOfNumber(21);
+    const N22 = countOccurrencesOfNumber(22);
+    const N23 = countOccurrencesOfNumber(23);
+    const N24 = countOccurrencesOfNumber(24);
+    const N25 = countOccurrencesOfNumber(25);
 
     return (
         <section className='analise'>
@@ -32,21 +56,22 @@ const Analise = () => {
             <table>
                 <thead>
                     <tr>
-                        <th>DEZ/-01</th>
-                        <th>DEZ/-02</th>
-                        <th>DEZ/-03</th>
-                        <th>DEZ/-04</th>
-                        <th>DEZ/-05</th>
+                        <th><span>DEZ/</span>-01</th>
+                        <th><span>DEZ/</span>-02</th>
+                        <th><span>DEZ/</span>-03</th>
+                        <th><span>DEZ/</span>-04</th>
+                        <th><span>DEZ/</span>-05</th>
+
                     </tr>
                 </thead>
                 <tbody>
-                        <tr >
-                        <td>{occurrencesOfOne}</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                    <tr >
+                        <td>{N1}</td>
+                        <td>{N2}</td>
+                        <td>{N3}</td>
+                        <td>{N4}</td>
+                        <td>{N5}</td>
+                    </tr>
                 </tbody>
             </table>
         </section>

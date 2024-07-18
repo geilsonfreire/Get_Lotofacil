@@ -26,16 +26,23 @@
     border-collapse: collapse;
 }
 
-.analise table th {
+.analise th {
+    text-align: left !important;
     border-bottom: 1px solid #00ff26;
     color: #00ff26;
+    padding: 5px 1rem;
+}
+
+.analise th span {
+   font-size: .7rem;
+    color: #850268;
 }
 
 
 .analise td {
     font-size: .7rem;
     padding: 5px;
-    text-align: left;
+    text-align: center;
     font-weight: normal;
     color: #ffffff56;
 }
