@@ -50,32 +50,40 @@ const Analise = () => {
     return (
         <section className='analise'>
             <h2><i><BsGraphUpArrow /></i> Análise Estatística</h2>
+            <div className="conatiner-analise">
 
-            <div className="soma-dez-sorteada">
-                <h3>Analise da Dez Quente / Fria</h3>
-                {Array.from({ length: 5 }, (_, rowIndex) => (
-                    <table key={rowIndex}>
-                        <thead>
-                            <tr>
-                                {Array.from({ length: 5 }, (_, colIndex) => (
-                                    <th key={colIndex}><span>DEZ/</span>{rowIndex * 5 + colIndex + 1}</th>
-                                ))}
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                {Array.from({ length: 5 }, (_, colIndex) => {
-                                    const numberIndex = rowIndex * 5 + colIndex;
-                                    return (
-                                        <td key={colIndex} style={getCellStyle(occurrences[numberIndex])}>
-                                            {occurrences[numberIndex]}
-                                        </td>
-                                    );
-                                })}
-                            </tr>
-                        </tbody>
-                    </table>
-                ))}
+                {/* Tabela de análise dezenas Quent e Frias */}
+                <div className="soma-dez-sorteada">
+                    <h3>Analise da Dez Quente / Fria</h3>
+                    {Array.from({ length: 5 }, (_, rowIndex) => (
+                        <table key={rowIndex}>
+                            <thead>
+                                <tr>
+                                    {Array.from({ length: 5 }, (_, colIndex) => (
+                                        <th key={colIndex}><span>DEZ/</span>{rowIndex * 5 + colIndex + 1}</th>
+                                    ))}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    {Array.from({ length: 5 }, (_, colIndex) => {
+                                        const numberIndex = rowIndex * 5 + colIndex;
+                                        return (
+                                            <td key={colIndex} style={getCellStyle(occurrences[numberIndex])}>
+                                                {occurrences[numberIndex]}
+                                            </td>
+                                        );
+                                    })}
+                                </tr>
+                            </tbody>
+                        </table>
+                    ))}
+                </div>
+
+                {/* Tabela de análise dezenas Pares e Impares */}
+                <div className="analise-impar-par">
+
+                </div>
             </div>
         </section>
     );
