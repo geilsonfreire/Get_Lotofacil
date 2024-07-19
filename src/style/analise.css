@@ -1,6 +1,6 @@
 .analise {
-    padding: 1rem 0;
     width: 100%;
+    padding: 1rem 0;
     border-radius: 10px;
 }
 
@@ -61,17 +61,16 @@
 }
 
 .conatiner-tabelas .left .container-tabela {
-    margin-top: 1.5rem;
+    margin-top: 2rem;
 }
 
 .container-tabela h3 {
     position: sticky;
     top: 0;
-    font-size: 1rem;
+    font-size: .7rem;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     background: #850268;
-    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
     padding: 0 1.5rem;
@@ -118,4 +117,12 @@
 
 .analise td:hover {
     background-color: #850268;
+}
+
+/* Analise probabilidades */
+.analise-probabilidades {
+    width: 100%;
+    border: solid 1px #ffffff21;
+    margin-top: 7rem;
+    border-radius: 10px;
 }

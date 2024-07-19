@@ -262,8 +262,11 @@ const Analise = () => {
                         </table>
                     </div>
                 </div>
-
             </div>
+            <div className="analise-probabilidades">
+                <h2><i><BsGraphUpArrow /></i> Análise Probabilidades</h2>
+            </div>
+
         </section>
     );
 };
