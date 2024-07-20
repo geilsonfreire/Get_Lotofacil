@@ -175,6 +175,25 @@ const Analise = () => {
 
     const sorteiosComRepeticoes = getSorteiosComRepeticoes(results); // Obtém os sorteios com repetições
 
+    // Função para obter o concurso atual e o anterior
+    const getConcursoAnteriorEAtual = () => {
+        if (results.length < 2) return { anterior: [], atual: [] };
+        const atual = results[0];
+        const anterior = results[1];
+        return { anterior: anterior.dezenas, atual: atual.dezenas };
+    };
+
+    const { anterior, atual } = getConcursoAnteriorEAtual(); // Obtém os dados dos concursos
+
+    // Função para encontrar as dezenas que se repetem entre o concurso atual e o anterior
+    const getDezenasRepetidas = (anterior, atual) => {
+        const repetidas = anterior.filter(dezena => atual.includes(dezena));
+        return repetidas;
+    };
+
+    const dezenasRepetidas = getDezenasRepetidas(anterior, atual); // Obtém as dezenas repetidas
+    const quantidadeRepetidas = dezenasRepetidas.length; // Conta a quantidade de dezenas repetidas
+
     return (
         <section className='analise'>
             <h2><i><BsGraphUpArrow /></i> Análise Estatística</h2>
@@ -312,6 +331,33 @@ const Analise = () => {
                         )}
                     </div>
                 </div>
+
+                {/* Tabela de Sorteios com dezenas que se repeten do concurso anterior */}
+                <div className="container-tabela">
+                    <h3>dezenas que se repeten do concurso anterior</h3>
+                    <div className="sorteio-repet">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Concurso Anterior</th>
+                                    <th>Concurso Atual</th>
+                                    <th>Dezenas Repetidas</th>
+                                    <th>QNT Dez Repetidas</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{anterior.join(', ')}</td>
+                                    <td>{atual.join(', ')}</td>
+                                    <td>{dezenasRepetidas.join(', ')}</td>
+                                    <td>{quantidadeRepetidas}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
             </div>
 
         </section>
