@@ -156,6 +156,25 @@ const Analise = () => {
     // Obtém o número de pares e ímpares mais frequentes
     const { mostFrequentEvenCount, mostFrequentOddCount } = getFrequencyOfEvenOddCounts();
 
+    // Função para verificar se há repetições de números em um sorteio
+    const hasRepetitions = (dezenas) => {
+        const seen = new Set();
+        for (const dezena of dezenas) {
+            if (seen.has(dezena)) {
+                return true;
+            }
+            seen.add(dezena);
+        }
+        return false;
+    };
+
+    // Função para obter sorteios com repetições
+    const getSorteiosComRepeticoes = (results) => {
+        return results.filter(result => hasRepetitions(result.dezenas));
+    };
+
+    const sorteiosComRepeticoes = getSorteiosComRepeticoes(results); // Obtém os sorteios com repetições
+
     return (
         <section className='analise'>
             <h2><i><BsGraphUpArrow /></i> Análise Estatística</h2>
@@ -214,29 +233,31 @@ const Analise = () => {
 
                 {/* Tabela de análise dezenas Pares e Ímpares */}
                 <div className="container-tabela right">
-                    <div className="container-impar-par">
+                    <div className='section-container'>
                         <h3>Analise da Dez Pares / Ímpares</h3>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Concurso</th>
-                                    <th>Pares</th>
-                                    <th>Ímpares</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {results.map(result => {
-                                    const { even, odd } = countEvenOdd(result.dezenas);
-                                    return (
-                                        <tr key={result.concurso}>
-                                            <td>{result.concurso}</td>
-                                            <td>{even}</td>
-                                            <td>{odd}</td>
-                                        </tr>
-                                    );
-                                })}
-                            </tbody>
-                        </table>
+                        <div className="container-impar-par">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Concurso</th>
+                                        <th>Pares</th>
+                                        <th>Ímpares</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {results.map(result => {
+                                        const { even, odd } = countEvenOdd(result.dezenas);
+                                        return (
+                                            <tr key={result.concurso}>
+                                                <td>{result.concurso}</td>
+                                                <td>{even}</td>
+                                                <td>{odd}</td>
+                                            </tr>
+                                        );
+                                    })}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 
                     {/* Tabela de análise da frequencia do número par e ímpar */}
@@ -265,6 +286,32 @@ const Analise = () => {
             </div>
             <div className="analise-probabilidades">
                 <h2><i><BsGraphUpArrow /></i> Análise Probabilidades</h2>
+                {/* Tabela de Sorteios com Repetições */}
+                <div className="container-tabela">
+                    <h3>Sorteios com Repetições</h3>
+                    <div className="sorteio-repet">
+                        {sorteiosComRepeticoes.length > 0 ? (
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Sorteio</th>
+                                        <th>Dezenas</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {sorteiosComRepeticoes.map((sorteio, index) => (
+                                        <tr key={index}>
+                                            <td>{index + 1}</td>
+                                            <td>{sorteio.dezenas.join(', ')}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        ) : (
+                            <p>Não há sorteios com repetições.</p>
+                        )}
+                    </div>
+                </div>
             </div>
 
         </section>

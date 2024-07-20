@@ -27,9 +27,14 @@
     justify-content: space-between;
 }
 
-.container-impar-par {
+.section-container {
     height: 250px;
     overflow: hidden;
+
+}
+
+.container-impar-par {
+    height: 250px;
     overflow-y: auto;
 }
 
@@ -65,8 +70,6 @@
 }
 
 .container-tabela h3 {
-    position: sticky;
-    top: 0;
     font-size: .7rem;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -87,7 +90,7 @@
     color: #00ff26;
     padding: 0 .2rem;
     position: sticky;
-    top: 20px;
+    top: 0;
 }
 
 .analise th.scrolled {
@@ -122,7 +125,23 @@
 /* Analise probabilidades */
 .analise-probabilidades {
     width: 100%;
-    border: solid 1px #ffffff21;
     margin-top: 7rem;
     border-radius: 10px;
+}
+
+.analise-probabilidades .container-tabela {
+    height: auto;
+}
+
+
+
+.sorteio-repet {
+    width: 100%;
+    border: solid 1px #ffffff21;
+}
+
+.sorteio-repet p {
+    width: 100%;
+    text-align: center;
+    color: #00ff26;
 }
