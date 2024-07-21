@@ -11,12 +11,12 @@ import "../style/menu.css";
 // Import icon
 import {
     FaHome,
-    FaShoppingCart,
     FaWallet,
     FaChartLine,
     FaRegClock,
     FaCog,
     FaSignOutAlt,
+    FaCanadianMapleLeaf
 } from "react-icons/fa";
 
 const Menu = () => {
@@ -42,7 +42,7 @@ const Menu = () => {
               <Icon to="/" icon={<FaHome />} title="Home" /> 
               <Icon to="/AllResultLotofacil" icon={<FaRegClock />} title="Historico de Resultados" /> 
               <Icon to="/analise" icon={<FaChartLine />} title="Analise Statistico" /> 
-              <Icon to="#" icon={<FaShoppingCart />} title="Produtos" /> 
+              <Icon to="#" icon={<FaCanadianMapleLeaf />} title="Jogada da sorte" /> 
               <Icon to="#" icon={<FaWallet />} title="Carteira" />
           </ul>
           <ul className="lasttMenu">

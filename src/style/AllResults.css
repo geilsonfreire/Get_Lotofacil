@@ -2,40 +2,41 @@
     width: 100%;
     margin: 0 auto;
     padding: 5px;
+    overflow-y: hidden;
 }
 
 .all-results h1 {
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-    border-left: solid 1px #850268;
-    border-bottom: solid 1px #850268;
+    font-size: 1.5rem;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
+    background: #850268;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
-    padding: 0 .5rem;
+    padding: .5rem;
 }
 
 .all-results h1 i {
-    display: inline-block;
-    font-size: 3rem;
-    margin: 0 1rem;
+    padding: 0 1rem;
     color: #00ff26;
 }
 
 /* Filtros */
-.all-results .filter{
+.all-results .filter {
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
     margin: 1rem 0;
 }
 
-.all-results .filter-button{
+.all-results .filter h2 {
+    font-size: .7rem;
+    color: #ffffff56;
+    margin: 0 1rem;
+}
+
+.all-results .filter-button {
     display: flex;
-    flex-direction: column;
     justify-content: flex-end;
     align-items: center;
 }
@@ -47,8 +48,6 @@
     background: transparent;
     border: none;
     font-size: .7rem;
-    margin: 0 1rem;
-    color: #fff;
 }
 
 .all-results .filter-button button i {
@@ -61,25 +60,24 @@
 .all-results table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 1rem;
-}
-
-.all-results th,
-.all-results td {
-    padding: 5px;
-    text-align: left;
-    font-weight: normal;
-    color: #ffffff56;
+    margin-top: .5rem;
 }
 
 .all-results th {
-    border-radius: 4px;
-    color: #fff;
-    border-bottom: solid 1px #00ff26;
+    text-align: left !important;
+    background-color: #850268;
+    color: #00ff26;
+    padding: 0 .2rem;
+    position: sticky;
+    top: 0;
 }
 
 .all-results td {
     font-size: .7rem;
+    padding: 0 .2rem;
+    font-weight: normal;
+    color: #ffffff56;
+    padding-left: 10px;
 }
 
 .all-results td:hover {
@@ -92,4 +90,13 @@
 
 .all-results tr:hover {
     background-color: #850268;
+}
+
+.scroll-result {
+    overflow-y: auto;
+    height: 450px;
+    border-bottom: solid 1px #ffffff56;
+    border-left: solid 1px #ffffff56;
+    border-right: solid 1px #ffffff56;
+    border-radius: 10px;
 }

@@ -93,169 +93,171 @@ const Home = () => {
 
     // Renderiza o componente jsx
     return (
-        <main>
-            <div className="ultimo-sorteio">
-                <div className="Busca">
-                    <img src={Banner} alt="Banner Lotofácil" />
+        <main id="Home" >
+            <section>
+                <div className="ultimo-sorteio">
+                    <div className="Busca">
+                        <img src={Banner} alt="Banner Lotofácil" />
 
-                    <div className="input-Busca">
-                        <label htmlFor="Concurso">Concurso: </label>
-                        <input
-                            id="Concurso"
-                            type="text"
-                            value={numeroConcurso}
-                            onChange={handleNumeroConcursoChange}
-                            placeholder="Digite o número do concurso..."
-                        />
-                        <button onClick={handleSearchClick}>
-                            <BsSearch /> Busca
-                        </button>
+                        <div className="input-Busca">
+                            <label htmlFor="Concurso">Concurso: </label>
+                            <input
+                                id="Concurso"
+                                type="text"
+                                value={numeroConcurso}
+                                onChange={handleNumeroConcursoChange}
+                                placeholder="Digite o número do concurso..."
+                            />
+                            <button onClick={handleSearchClick}>
+                                <BsSearch /> Busca
+                            </button>
 
-                    </div>
-                </div>
-
-                <div className="sorteio-container">
-                    <div className="sorteio-date">
-                        <h2>Último Sorteio - <span>{concurso.data}</span></h2>
-                    </div>
-                    <div className="sorteio-info">
-                        <h3>
-                            Concurso: <span>{concurso.concurso}</span>
-                        </h3>
-                        <h3>
-                            Ganhadores:
-                            <span>
-                                {concurso.localGanhadores && concurso.localGanhadores.length > 0
-                                    ? `${concurso.localGanhadores.length}` : "Acumulou!"
-                                }
-                            </span>
-                        </h3>
-                        <h3>Local do sorteio: <span>{concurso.local}</span></h3>
-                        <h3>
-                            Acumulado:
-                            <span>
-                                {concurso.valorAcumuladoProximoConcurso &&
-                                    concurso.valorAcumuladoProximoConcurso
-                                        .toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
-                            </span>
-                        </h3>
-                    </div>
-                    <div className="sorteio">
-                        <div className="dezenas">
-                            {concurso.dezenas && concurso.dezenas.map((dezena, index) => (
-                                <span key={index}>{dezena}</span>
-                            ))}
                         </div>
                     </div>
-                    <div className="Titulos">
-                        <h2><i><FiAward /></i>Premiação</h2>
 
+                    <div className="sorteio-container">
+                        <div className="sorteio-date">
+                            <h2>Último Sorteio - <span>{concurso.data}</span></h2>
+                        </div>
+                        <div className="sorteio-info">
+                            <h3>
+                                Concurso: <span>{concurso.concurso}</span>
+                            </h3>
+                            <h3>
+                                Ganhadores:
+                                <span>
+                                    {concurso.localGanhadores && concurso.localGanhadores.length > 0
+                                        ? `${concurso.localGanhadores.length}` : "Acumulou!"
+                                    }
+                                </span>
+                            </h3>
+                            <h3>Local do sorteio: <span>{concurso.local}</span></h3>
+                            <h3>
+                                Acumulado:
+                                <span>
+                                    {concurso.valorAcumuladoProximoConcurso &&
+                                        concurso.valorAcumuladoProximoConcurso
+                                            .toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
+                                </span>
+                            </h3>
+                        </div>
+                        <div className="sorteio">
+                            <div className="dezenas">
+                                {concurso.dezenas && concurso.dezenas.map((dezena, index) => (
+                                    <span key={index}>{dezena}</span>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="Titulos">
+                            <h2><i><FiAward /></i>Premiação</h2>
+
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Acertos</th>
+                                        <th>Ganhadores</th>
+                                        <th>Premio</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {concurso.premiacoes && concurso.premiacoes.map((premio, index) => (
+                                        <tr key={index}>
+                                            <td>{premio.descricao}</td>
+                                            <td>{premio.ganhadores}</td>
+                                            <td>{premio.valorPremio.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                        <div className="Titulos">
+                            <h2><i><BsBookmarkCheck /></i>Status do proximo concurso</h2>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Prox Concurso</th>
+                                        <th>Data prox. concurso</th>
+                                        <th>Valor Acumulado</th>
+                                        <th>Valor do concurso</th>
+                                        <th>Estipulado prox. concurso</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{concurso.proximoConcurso}</td>
+                                        <td>{concurso.dataProximoConcurso}</td>
+                                        <td>
+                                            {concurso.valorAcumuladoProximoConcurso &&
+                                                concurso.valorAcumuladoProximoConcurso
+                                                    .toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
+                                        </td>
+                                        <td>
+                                            {concurso.valorAcumuladoConcurso_0_5 &&
+                                                concurso.valorAcumuladoConcurso_0_5
+                                                    .toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
+                                        </td>
+                                        <td>
+                                            {concurso.valorEstimadoProximoConcurso &&
+                                                concurso.valorEstimadoProximoConcurso
+                                                    .toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+
+                    <div className="Titulos">
+                        <h2><i><BsBookmarkCheck /></i>Probabilidade de acertos</h2>
                         <table>
                             <thead>
                                 <tr>
                                     <th>Acertos</th>
-                                    <th>Ganhadores</th>
-                                    <th>Premio</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {concurso.premiacoes && concurso.premiacoes.map((premio, index) => (
-                                    <tr key={index}>
-                                        <td>{premio.descricao}</td>
-                                        <td>{premio.ganhadores}</td>
-                                        <td>{premio.valorPremio.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-
-                    </div>
-
-                    <div className="Titulos">
-                        <h2><i><BsBookmarkCheck /></i>Status do proximo concurso</h2>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Prox Concurso</th>
-                                    <th>Data prox. concurso</th>
-                                    <th>Valor Acumulado</th>
-                                    <th>Valor do concurso</th>
-                                    <th>Estipulado prox. concurso</th>
+                                    <th>Valor da aposta</th>
+                                    <th>Probabilidade</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>{concurso.proximoConcurso}</td>
-                                    <td>{concurso.dataProximoConcurso}</td>
-                                    <td>
-                                        {concurso.valorAcumuladoProximoConcurso &&
-                                            concurso.valorAcumuladoProximoConcurso
-                                                .toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
-                                    </td>
-                                    <td>
-                                        {concurso.valorAcumuladoConcurso_0_5 &&
-                                            concurso.valorAcumuladoConcurso_0_5
-                                                .toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
-                                    </td>
-                                    <td>
-                                        {concurso.valorEstimadoProximoConcurso &&
-                                            concurso.valorEstimadoProximoConcurso
-                                                .toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
-                                    </td>
+                                    <td>15 números</td>
+                                    <td>R$ 3,00</td>
+                                    <td>1 em 3.268.760</td>
+                                </tr>
+                                <tr>
+                                    <td>16 números</td>
+                                    <td>R$ 48,00</td>
+                                    <td>1 em 204.297</td>
+                                </tr>
+                                <tr>
+                                    <td>17 números</td>
+                                    <td>R$ 408,00</td>
+                                    <td>1 em 24.035</td>
+                                </tr>
+                                <tr>
+                                    <td>18 números</td>
+                                    <td>R$ 2.448,00</td>
+                                    <td>1 em 4.005</td>
+                                </tr>
+                                <tr>
+                                    <td>19 números</td>
+                                    <td>R$ 11.628,00</td>
+                                    <td>1 em 843</td>
+                                </tr>
+                                <tr>
+                                    <td>20 números</td>
+                                    <td>R$ 46.512,00</td>
+                                    <td>1 em 210</td>
                                 </tr>
                             </tbody>
                         </table>
-
                     </div>
                 </div>
 
-                <div className="Titulos">
-                    <h2><i><BsBookmarkCheck /></i>Probabilidade de acertos</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Acertos</th>
-                                <th>Valor da aposta</th>
-                                <th>Probabilidade</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>15 números</td>
-                                <td>R$ 3,00</td>
-                                <td>1 em 3.268.760</td>
-                            </tr>
-                            <tr>
-                                <td>16 números</td>
-                                <td>R$ 48,00</td>
-                                <td>1 em 204.297</td>
-                            </tr>
-                            <tr>
-                                <td>17 números</td>
-                                <td>R$ 408,00</td>
-                                <td>1 em 24.035</td>
-                            </tr>
-                            <tr>
-                                <td>18 números</td>
-                                <td>R$ 2.448,00</td>
-                                <td>1 em 4.005</td>
-                            </tr>
-                            <tr>
-                                <td>19 números</td>
-                                <td>R$ 11.628,00</td>
-                                <td>1 em 843</td>
-                            </tr>
-                            <tr>
-                                <td>20 números</td>
-                                <td>R$ 46.512,00</td>
-                                <td>1 em 210</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-        </main>
+            </section>
+        </main >
     );
 };
 

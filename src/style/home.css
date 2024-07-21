@@ -1,24 +1,24 @@
-main {
+section {
     padding: 1rem 2rem;
     width: 100%;
     border-radius: 10px;
 }
 
-main .Busca {
+section .Busca {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
 }
 
-main .input-Busca {
+section .input-Busca {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
 }
 
-main .Busca label {
+section .Busca label {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,7 +28,7 @@ main .Busca label {
     letter-spacing: 2px;
 }
 
-main .Busca input {
+section .Busca input {
     padding: .5rem;
     border-radius: 4px;
     font-size: .8rem;
@@ -43,14 +43,14 @@ main .Busca input {
     border-bottom: solid 1px #00ff26;
 }
 
-main .Busca input::placeholder {
+section .Busca input::placeholder {
     color: #726b6ba4;
     font-weight: bold;
     font-size: .7rem;
     letter-spacing: 2px;
 }
 
-main .Busca button {
+section .Busca button {
     padding: .5rem;
     border-radius: 4px;
     font-size: .8rem;
@@ -64,19 +64,19 @@ main .Busca button {
     cursor: pointer;
 }
 
-main .Busca button:hover {
+section .Busca button:hover {
     background: #00ff26;
     color: #000;
 }
 
 
 
-main img {
+section img {
     width: 150px;
     height: 25px;
 }
 
-main .ultimo-sorteio {
+section .ultimo-sorteio {
     width: 100%;
     gap: 1rem;
     border-left: solid 1px #00ff26;
@@ -87,7 +87,7 @@ main .ultimo-sorteio {
 }
 
 
-main .sorteio-info {
+section .sorteio-info {
     display: flex;
     flex-direction: column;
     padding: .5rem;
@@ -95,7 +95,7 @@ main .sorteio-info {
     border-radius: 10px;
 }
 
-main .ultimo-sorteio h2 {
+section .ultimo-sorteio h2 {
     font-size: 1.5rem;
     text-align: center;
     border-top-left-radius: 30px;
@@ -107,19 +107,19 @@ main .ultimo-sorteio h2 {
     padding: .5rem;
 }
 
-main .ultimo-sorteio h2 span {
+section .ultimo-sorteio h2 span {
     color: #00ff26;
     text-decoration: underline;
 }
 
-main .ultimo-sorteio h3 {
+section .ultimo-sorteio h3 {
     font-size: .8rem;
     font-weight: bold;
     color: #00ff26;
     letter-spacing: 2px;
 }
 
-main .ultimo-sorteio h3 span {
+section .ultimo-sorteio h3 span {
     font-size: .8rem;
     font-weight: normal;
     color: #fff;
@@ -128,20 +128,20 @@ main .ultimo-sorteio h3 span {
 
 }
 
-main .ultimo-sorteio .sorteio {
+section .ultimo-sorteio .sorteio {
     border-bottom: solid 1px #00ff26;
     padding: 1rem;
     border-radius: 10px;
 }
 
-main .ultimo-sorteio .sorteio .dezenas {
+section .ultimo-sorteio .sorteio .dezenas {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: .5rem;
 }
 
-main .ultimo-sorteio .sorteio .dezenas span {
+section .ultimo-sorteio .sorteio .dezenas span {
     font-size: 1.2rem;
     font-weight: bold;
     color: #850268;
@@ -157,7 +157,7 @@ main .ultimo-sorteio .sorteio .dezenas span {
 
 }
 
-main .Titulos {
+section .Titulos {
     width: 100%;
     gap: 1rem;
     margin: 1rem 0;
@@ -166,7 +166,7 @@ main .Titulos {
     border-left: solid 1px #00ff26;
 }
 
-main .Titulos h2 {
+section .Titulos h2 {
     font-size: 1rem;
     text-align: start;
     border-top-left-radius: 30px;
@@ -178,7 +178,7 @@ main .Titulos h2 {
     padding: 5px 2rem;
 }
 
-main .Titulos h2 i {
+section .Titulos h2 i {
     color: #00ff26;
     font-size: 1.5rem;
     margin-right: .5rem;
