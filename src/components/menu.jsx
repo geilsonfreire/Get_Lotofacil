@@ -42,7 +42,7 @@ const Menu = () => {
               <Icon to="/" icon={<FaHome />} title="Home" /> 
               <Icon to="/AllResultLotofacil" icon={<FaRegClock />} title="Historico de Resultados" /> 
               <Icon to="/analise" icon={<FaChartLine />} title="Analise Statistico" /> 
-              <Icon to="#" icon={<FaCanadianMapleLeaf />} title="Jogada da sorte" /> 
+              <Icon to="/jogos" icon={<FaCanadianMapleLeaf />} title="Jogada da sorte" /> 
               <Icon to="#" icon={<FaWallet />} title="Carteira" />
           </ul>
           <ul className="lasttMenu">

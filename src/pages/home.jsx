@@ -169,9 +169,7 @@ const Home = () => {
                                     ))}
                                 </tbody>
                             </table>
-
                         </div>
-
                         <div className="Titulos">
                             <h2><i><BsBookmarkCheck /></i>Status do proximo concurso</h2>
                             <table>
@@ -255,7 +253,6 @@ const Home = () => {
                         </table>
                     </div>
                 </div>
-
             </section>
         </main >
     );
