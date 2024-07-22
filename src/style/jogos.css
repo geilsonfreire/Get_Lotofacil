@@ -103,6 +103,11 @@ section {
     letter-spacing: 2px;
 }
 
+#jogos .sorteio-title h2 i {
+    padding: 0 1rem;
+    color: #00ff26;
+}
+
 #jogos .sorteio-title h2 span {
     color: #00ff26;
     text-decoration: underline;
@@ -158,7 +163,6 @@ section {
 
 .container-info-dados {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     gap: 1rem;
     margin: 1rem;
@@ -166,3 +170,187 @@ section {
     border-radius: 10px;
     padding: 1rem;
 }
+
+
+.container-left {
+    width: 30%;
+}
+
+.container-left .info-dados h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #00ff26;
+    letter-spacing: 2px;
+}
+
+.container-left .info-dados h3 span {
+    font-size: .8rem;
+    font-weight: normal;
+    color: #fff;
+    letter-spacing: 2px;
+    margin-left: .5rem;
+}
+
+.container-right {
+    width: 70%;
+    border: solid 1px #726b6b2d;
+    border-radius: 10px;
+}
+
+.container-right .info-dados h3 {
+    padding: .2rem 0;
+    text-align: center;
+    background-color: #850268;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 4px;
+}
+
+.container-right .info-dados h3 i {
+    padding: 0 1rem;
+    color: #00ff26;
+}
+
+.container-right .info-dados .acertos {
+    width: 100%;
+}
+
+.container-right .info-dados .acertos table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.container-right .info-dados .acertos table th {
+    border-top: 1px solid #00ff26;
+    color: #00ff26;
+}
+
+.container-right .info-dados .acertos table td {
+    font-size: .8rem;
+    padding: 0 .2rem;
+    text-align: center;
+    font-weight: normal;
+    color: #ffffff2d;
+}
+
+.container-right .info-dados .acertos table td:hover {
+    color: #fff;
+}
+
+
+.container-right .info-dados .acertos table td:hover {
+    background-color: #850268;
+}
+
+
+/*Meus Bilhetes */
+.bilhetes {
+    border-radius: 10px;
+    margin: 5px;
+    border-bottom: solid 1px #00ff26;
+}
+
+.bilhetes h2 {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background: #850268;
+    padding: .5rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.bilhetes h2 i {
+    padding: 0 1rem;
+    color: #00ff26;
+}
+
+/* Add Jogos */
+.bilhetes .add-jogos {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: .5rem;
+}
+
+.bilhetes .add-jogos label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #00ff26;
+    letter-spacing: 2px;
+}
+
+.bilhetes .add-jogos input {
+    padding: .5rem 1rem;
+    border-radius: 4px;
+    font-size: .8rem;
+    letter-spacing: 2px;
+    width: 500px;
+    height: 30px;
+    outline: none;
+    border: none;
+    color: #fff;
+    margin-bottom: .2rem;
+    background: none;
+    border-bottom: solid 1px #00ff26;
+}
+
+.bilhetes .add-jogos input::placeholder {
+    color: #726b6ba4;
+    letter-spacing: 2px;
+    padding-left: .8rem;
+}
+
+.bilhetes .add-jogos button {
+    display: flex;
+    padding: .5rem;
+    border-radius: 4px;
+    font-size: .8rem;
+    letter-spacing: 2px;
+    width: 150px;
+    height: 30px;
+    outline: none;
+    border: none;
+    color: #fff;
+    background: #850268;
+    cursor: pointer;
+}
+
+.bilhetes .add-jogos button:hover {
+    background: #00ff26;
+    color: #000;
+}
+
+.bilhetes .add-jogos button i {
+    padding: 0 .5rem;
+    font-size: 1rem;
+}
+
+.container-scroll {
+    height: auto;
+    overflow-y: auto;
+    display: flex;
+}
+
+/*Meus Bilhetes Left */
+.bilhetes .bilhete-left {
+    width: 60%;
+}
+
+.bilhetes .bilhete-left .container-bilhetes {
+    padding: 0.5rem;
+}
+
+.bilhete-left span {
+    margin-bottom: 1rem;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #850268;
+    letter-spacing: 2px;
+    margin: 10px;
+}
+

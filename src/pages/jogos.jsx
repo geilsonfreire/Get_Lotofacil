@@ -8,11 +8,12 @@ import "../style/jogos.css";
 // Import Services API
 import apiService from "../services/APIServices";
 
+// Import Components
+
 
 // Import Images
 import Banner from "../assets/img/BannerLotofacil.png";
-import { BsSearch, BsBookmarkCheck } from "react-icons/bs";
-import { FiAward } from "react-icons/fi";
+import { BsSearch, BsCalendar3, BsFillPiggyBankFill, BsFillPersonCheckFill, BsPlus } from "react-icons/bs";
 
 const jogos = () => {
     const [concurso, setConcurso] = useState({}); // Inicializa o estado do concurso
@@ -118,7 +119,7 @@ const jogos = () => {
                     {/* Ultimo Sorteio */}
                     <div className="jogos-container">
                         <div className="sorteio-title">
-                            <h2>Último Sorteio - <span>{concurso.data}</span></h2>
+                            <h2> <i><BsCalendar3 /></i>Último Sorteio - <span>{concurso.data}</span></h2>
                         </div>
                         <div className="sorteio-inform">
                             <div className="result">
@@ -141,7 +142,7 @@ const jogos = () => {
                                 </div>
                                 <div className="container-right">
                                     <div className="info-dados">
-                                        <h3>Estimativas de Premiação</h3>
+                                        <h3> <i><BsFillPiggyBankFill /> </i>Estimativas de Premiação</h3>
                                         <div className="acertos">
                                             <table>
                                                 <thead>
@@ -159,11 +160,11 @@ const jogos = () => {
                                                         <td>R$ 20,00</td>
                                                         <td>R$ 30,00</td>
                                                         <td>R$ 40,00</td>
-                                                        <td>R$ 50,00</td>
+                                                        <td>R$ 1.000.000,00</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
-                                            
+
                                         </div>
                                     </div>
                                 </div>
@@ -171,6 +172,53 @@ const jogos = () => {
 
                         </div>
 
+                    </div>
+
+                    {/* Meus Bilhetes de jogos */}
+                    <div className="bilhetes">
+                        <h2> <i><BsFillPersonCheckFill /></i>Meus Bilhetes de Jogos</h2>
+                        <div className="add-jogos">
+                            <label htmlFor="Add-jogos">Adicione suas dezenas aqui!: </label>
+                            <input id="Add-jogos" type="text" name="Adicionar" placeholder="Favor apenas numeros" />
+                            <button> <i><BsPlus /></i>Adicionar</button>
+                        </div>
+                        <div className="container-scroll">
+                            <div className="bilhete-left">
+                                <span>Bilhetes</span>
+                                <div className="container-bilhetes">
+
+                                </div>
+                            </div>
+
+                            <div className="bilhete-right">
+                                <div className="jogos-num">
+                                    <h3>Jogos</h3>
+                                    <h3>Meus Jogos e Premiaçoes </h3>
+                                </div>
+                                <div className="org-jogos">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>QNT. Dez</th>
+                                                <th>Acertos</th>
+                                                <th>Valor premiaçao</th>
+                                                <th>Custo por Bilhete</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>15</td>
+                                                <td>15</td>
+                                                <td>R$ 1.000.000,00</td>
+                                                <td>R$ 3,50</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
